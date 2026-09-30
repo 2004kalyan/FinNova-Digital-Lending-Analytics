@@ -92,6 +92,16 @@ Portfolio KPIs, monthly disbursement trend, DPD distribution, risk-grade default
 ### Page 2 — Risk & Collections
 Delinquency rate, 90+ DPD exposure, average DPD, collection amount, DPD-based collection analysis, collection activity and collection amount by action.
 
+### Power BI Access
+
+The Power BI dashboard was built using analytical views from Snowflake.
+
+The `.pbix` file is included for dashboard structure and analysis reference. 
+The live Snowflake connection is not publicly shared because database credentials 
+and private warehouse access are not included in the repository.
+
+Dashboard screenshots are provided for visual reference.
+
 ## Important Analytical Notes
 
 - The dataset is synthetic.
