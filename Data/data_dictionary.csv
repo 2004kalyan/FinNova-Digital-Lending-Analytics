@@ -1,0 +1,58 @@
+table_name,column_name,description,data_type,key_type,business_definition
+customers,customer_id,Customer identifier,VARCHAR,PK,Unique customer identifier
+customers,age,Customer age,INTEGER,,Age in years
+customers,gender,Customer gender,VARCHAR,,Customer demographic attribute
+customers,employment_type,Employment type,VARCHAR,,"Salaried, Self-Employed, Business Owner, Contract or Student"
+customers,monthly_income,Monthly income,NUMBER,,Customer monthly income
+customers,customer_type,Customer relationship type,VARCHAR,,New or Existing customer
+customers,city,Customer city,VARCHAR,,Customer city
+customers,region,Customer region,VARCHAR,,Business region
+customers,customer_since,Customer relationship start date,DATE,,Date customer relationship began
+applications,application_id,Application identifier,VARCHAR,PK,Unique loan application identifier
+applications,customer_id,Customer identifier,VARCHAR,FK,Links application to customer
+applications,application_date,Application date,DATE,,Date loan application was submitted
+applications,requested_amount,Requested loan amount,NUMBER,,Amount requested by customer
+applications,approved_amount,Approved loan amount,NUMBER,,Amount approved by lender
+applications,loan_type,Loan product type,VARCHAR,,"Personal, Consumer, Business or Education"
+applications,acquisition_channel,Customer acquisition channel,VARCHAR,,"Direct, Partner, Digital Marketing, Referral or Mobile App"
+applications,application_status,Application decision status,VARCHAR,,"Approved, Rejected or Withdrawn"
+credit_assessments,assessment_id,Credit assessment identifier,VARCHAR,PK,Unique credit assessment identifier
+credit_assessments,application_id,Application identifier,VARCHAR,FK,Links assessment to application
+credit_assessments,credit_score,Credit score,INTEGER,,Project credit score used for risk segmentation
+credit_assessments,debt_to_income,Debt-to-income ratio,NUMBER,,Debt-to-income ratio used in credit assessment
+credit_assessments,employment_years,Employment experience,NUMBER,,Years of employment experience
+credit_assessments,risk_grade,Risk grade,VARCHAR,,Project risk segmentation based on credit score
+credit_assessments,assessment_date,Assessment date,DATE,,Date of credit assessment
+loans,loan_id,Loan identifier,VARCHAR,PK,Unique disbursed loan identifier
+loans,application_id,Application identifier,VARCHAR,FK,Links loan to application
+loans,disbursement_date,Loan disbursement date,DATE,,Date loan amount was disbursed
+loans,disbursement_amount,Disbursed loan amount,NUMBER,,Amount actually disbursed
+loans,interest_rate,Loan interest rate,NUMBER,,Annualized project interest rate
+loans,tenure_months,Loan tenure,INTEGER,,Loan tenure in months
+loans,loan_status,Current loan status,VARCHAR,,"Active, Delinquent or Default"
+repayments,repayment_id,Repayment identifier,VARCHAR,PK,Unique repayment/installment identifier
+repayments,loan_id,Loan identifier,VARCHAR,FK,Links repayment to loan
+repayments,installment_number,Installment number,INTEGER,,Sequential installment number
+repayments,due_date,Payment due date,DATE,,Scheduled repayment due date
+repayments,payment_date,Actual payment date,DATE,,Date payment was received; may be missing
+repayments,amount_due,Amount due,NUMBER,,Amount scheduled for repayment
+repayments,amount_paid,Amount paid,NUMBER,,Amount actually paid
+repayments,dpd,Days past due,INTEGER,,Days payment is past its due date
+repayments,dpd_bucket,DPD category,VARCHAR,,"Current, 1-30, 31-60, 61-89 or 90+"
+repayments,overdue_amount,Overdue amount,NUMBER,,Amount overdue on the repayment
+repayments,outstanding_principal,Outstanding principal,NUMBER,,Remaining principal balance
+repayments,default_flag,Default indicator,INTEGER,,Project default flag based on 90+ DPD
+collections,collection_id,Collection action identifier,VARCHAR,PK,Unique collection activity identifier
+collections,loan_id,Loan identifier,VARCHAR,FK,Links collection activity to loan
+collections,collection_date,Collection action date,DATE,,Date of collection activity
+collections,collection_action,Collection action type,VARCHAR,,"Call, SMS, Promise to Pay, Email or Field Follow-up"
+collections,amount_collected,Amount collected,NUMBER,,Amount collected through the action
+collections,promise_to_pay,Promise-to-pay indicator,VARCHAR,,Indicates whether a promise to pay was recorded
+collections,promise_to_pay_date,Promise-to-pay date,DATE,,Expected payment date when applicable
+collections,recovery_status,Recovery outcome,VARCHAR,,Partial or Recovered
+loan_status_history,status_history_id,Status history identifier,VARCHAR,PK,Unique loan status history record
+loan_status_history,loan_id,Loan identifier,VARCHAR,FK,Links history record to loan
+loan_status_history,status_date,Status date,DATE,,Date of recorded loan status
+loan_status_history,loan_status,Loan status,VARCHAR,,Historical loan status
+loan_status_history,dpd,Days past due,INTEGER,,DPD recorded at the status date
+loan_status_history,dpd_bucket,DPD category,VARCHAR,,DPD category at the status date

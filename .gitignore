@@ -1,0 +1,22 @@
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+
+# Large / local datasets
+FinNova_Digital_Lending_Raw_Dataset/
+FinNova_Digital_Lending_Clean/
+
+# Power BI temporary / backup files
+*.pbit
+*.tmp
+~$*
+
+# Credentials / secrets
+.env
+*.pem
+*.key
+
+# OS files
+.DS_Store
+Thumbs.db
