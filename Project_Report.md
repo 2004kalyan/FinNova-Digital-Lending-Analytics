@@ -226,6 +226,4 @@ The FinNova project demonstrates an end-to-end Data Analyst workflow:
 
 It demonstrates both technical analytics skills and the ability to translate lending data into business-oriented portfolio, risk and collections reporting.
 
-## 21. Interview Summary
 
-> I built an end-to-end digital lending analytics project for a fictional lender called FinNova using synthetically generated data. I designed the data around the complete lending lifecycle from application and credit assessment through disbursement, repayment, delinquency and collections. I cleaned and analyzed the data using Python, built the analytical layer in Snowflake using SQL, and developed a Power BI dashboard with DAX to monitor portfolio performance, credit risk, DPD, overdue exposure and collections. The final model contained 48,702 loans and showed a 5.20% default rate in the Power BI model, approximately ₹72.72 Cr in disbursements and ₹22.78 Cr in overdue exposure.
